@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.signup-page-wrap{
+    width: 100%;
+    height: fit-content;
+    background-color: blue;
+    display: flex;overflow: hidden;
+}
+
+
+.image-section{
+    width: 38%;
+    min-width: 525px;
+    height: 100%;
+    background-color: hsla(174, 68%, 16%, 0.82);
+}
+
+.img-section-overlay{
+    width: 38%;
+    min-width: 525px;
+    height: 100vh;
+    background-color: hsla(173, 69%, 16%, 0.82);
+    /* background-color: rgba(48, 72, 69, 0.82); */
+    background-image: url(../assets/signuppageimg.png);
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position: -235px 0;
+    background-blend-mode: saturation;
+    display: flex;
+    justify-content: center;
+    padding: 55px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.img-section-overlay > h2{
+    font-family: bold;
+    color: white;
+    font-size: 29px;
+    text-align: center;
+    line-height: 1.2;
+    width: 270px;
+}
+
+
+span#buynsell{
+    color: rgb(232, 195, 42);
+}
+
+
+
+img#sign-phone-img{
+    position: absolute;
+    bottom: -135px;
+    width: 310px;
+}
+
+
+
+
+
+
+
+
+.form-section{
+    width: 62%;
+    min-width: 550px;
+    height: fit-content;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px 60px;
+    font-family: Bitmama;
+    color: #303131;
+}
+
+
+.signup-form-wrap{
+    width: 520px;
+    height: fit-content;
+    /* background-color: aquamarine; */
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+
+.bitmama-svg{
+    width: 100%;
+    height: fit-content;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0D4740;
+    margin-bottom: 35px;
+}
+
+
+.signup-header{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.signup-header > h2{
+    font-family: bold;
+    font-size: 29px;
+}
+
+
+img#header-btc{
+    width: 45px;
+    margin-right: 20px;
+}
+
+.signup-form-wrap > p{
+    font-size: 17px;
+    color: #808080;
+}
+
+
+
+
+
+
+
+form#login-form{
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 10px;
+    /* background-color: rebeccapurple; */
+}
+
+
+.input-wrap{
+    width: 90%;
+    height: fit-content;
+    /* background-color: lightcyan; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.input-wrap > label{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.input-wrap > input{
+    width: 100%;
+    height: 52px;
+    background-color: #f2f2f2;
+    padding: 0 15px;
+    border: none;
+    border-radius: 8px;
+    outline: 1px solid #808080;
+    font-size: 15px;
+    color: #808080;
+}
+
+
+#forgot-pass{
+    font-size: 14px;
+    color: #808080;
+    position: absolute;
+    right: 0;
+    bottom: -35px;
+}
+
+
+.password-visibility-icon{
+    width: 22px;
+    height: 22px;
+    color: #808080;
+    position: absolute;
+    right: 25px;
+    bottom: 14px;
+}
+
+
+
+.button-section{
+    width: 90%;
+    height: fit-content;
+    /* background-color: palegreen; */
+    display: flex;
+    justify-content: center;
+    padding: 70px 30px 90px;
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+#login-link{
+    text-decoration: none;
+}
+
+button.login-button{
+    width: 360px;
+    height: 55px;
+    border: none;
+    background-color: #0D4740;
+    /* background-blend-mode: ; */
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+svg#login-arrow{
+    margin-top: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.bottom-section{
+    width: 100%;
+    height: fit-content;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 25px;
+    color: #808080;
+}
+
+
+p#not-you{
+    font-size: 15px;
+    font-weight: 500;
+    color: #808080;
+    text-align: center;
+    color: black;
+}
+
+#botton-signup{
+    color: #0D4740;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+p#disclaimer{
+    font-size: 13px;
+    font-weight: 500;
+    color: #303131;
+    width: 310px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+#tos{
+    color: #7ec05c;
+}
+
+p#version{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+
+
+
+
+.customer-support-chat{
+    width: fit-content;
+    height: 50px;
+    background-color: #0D4740;
+    border-radius: 22px;
+    color: rgb(242, 244, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px 0 8px;
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+}
+
+.customer-support-chat > p{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.customer-support-chat:hover{
+    transition: 300ms;
+    cursor: pointer;
+    box-shadow: 0px 4px 5px rgba(160, 160, 160, 0.719);
+}
+
+
+
+.support-chat2{
+    width: 42px;
+    height: 42px;
+    background-color: #0aa847;
+    border-radius: 50%;
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 18px;
+    right: 15px;
+}
+
+.support-chat2:hover{
+    cursor: pointer;
+    transition: 300ms;
+    scale: 1.13;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SIGNUP PAGE */
+form#signup-form{
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 10px;
+    /* background-color: rebeccapurple; */
+}
+
+#signup-form > p{
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1023px) {
+    .image-section{
+        display: none;
+    }
+    .form-section{
+        width: 100%;
+    }
+    .signup-form-wrap{
+        width: 460px;
+        margin-right: 0px;
+    }
+    .input-wrap{
+        width: 100%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+    .form-section{
+        min-width: 250px;
+        padding: 40px 25px 60px;
+    }
+    .signup-header > h2{
+        font-size: 23px;
+    }
+}
+
+
+
+@media screen and (max-width: 549px) {
+    .signup-form-wrap{
+        width: 100%;
+        min-width: 200px;
+    }
+    .bitmama-svg{
+        margin-bottom: 0;
+    }
+    form#login-form{
+        margin-top: 0;
+    }
+    .button-section{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 415px) {
+    button.login-button{
+        width: 250px;
+    }
+    p#disclaimer{
+        width: 100%;
+    }
+}

@@ -1,0 +1,189 @@
+
+.footer-wrap{
+    width: 100%;
+    height: fit-content;
+    /* background-color: beige; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+
+.footer-main{
+    width: 1090px;
+    height: fit-content;
+    background-color: #0D4740;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+.footer-grid{
+    width: 1000px;
+    height: fit-content;
+    /* background-color: lightgoldenrodyellow; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* grid-template-columns: repeat(5, 1fr); */
+    /* grid-template-rows: max-content; */
+    border-bottom: 1px solid #E2E8F0;
+}
+
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    color: #F2F4F3;
+    gap: 20px;
+    padding: 30px 10px 40px 30px;
+}
+
+.footer-links > h4{
+    font-family: semibold;
+    font-size: 14.5px;
+}
+
+
+#foot{
+    color: #F2F4F3;
+    text-decoration: none;
+    font-family: Bitmama;
+    font-size: 12px;
+}
+
+
+
+
+
+.footer-details{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px 10px 20px;
+    color: #F2F4F3;
+    /* background-color: beige; */
+}
+
+
+.footer-details > h3{
+    font-family: bold;
+    font-size: 25px;
+    text-align: center;
+    line-height: 1.4;
+}
+p#get-app{
+    font-family: semibold;
+    font-size: 16px;
+    text-align: center;
+}
+
+p#fastest{
+    font-family: Bitmama;
+    font-size: 14px;
+    text-align: center;
+}
+
+img#white-bitlogo{
+    width: 100px;
+}
+
+
+.social-handles{
+    width: fit-content;
+    height: fit-content;
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-handles > img{
+    width: 30px;
+}
+
+
+
+
+
+
+.sub-footer{
+    width: 83%;
+    height: fit-content;
+    /* background-color: palegoldenrod; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #303131;
+    padding: 10px 0 0 0;
+}
+
+.sub-footer > p{
+    font-family: Bitmama;
+    font-size: 12.5px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+span#cap-text{
+    font-weight: 500;
+}
+
+
+img#footer-img{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1159px) {
+    .footer-main{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1079px) {
+    .footer-grid{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .footer-grid{
+        justify-content: start;
+    }
+    .footer-details > h3{
+        font-size: 14px;
+    }
+    p#get-app{
+        font-size: 12px;
+    }
+    img#footer-img{
+        width: 150px;
+    }
+}

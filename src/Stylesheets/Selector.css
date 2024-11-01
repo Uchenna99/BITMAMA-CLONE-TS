@@ -1,0 +1,76 @@
+
+
+.select-div{
+    width: 90px;
+    height: 35px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 5px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.select-div:hover{
+    cursor: pointer;
+}
+
+
+.img-holder{
+    width: 25px;
+    height: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.img-holder > img{
+    width: 100%;
+    height: 100%;
+}
+
+.img-holder2{
+    overflow: visible;
+}
+
+
+
+.drop-select{
+    min-width: 150%;
+    max-width: fit-content;
+    height: fit-content;
+    background-color: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+    padding: 2px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 5;
+    top: 33px;
+    left: 0;
+    animation: drop 100ms 1 linear;
+}
+
+@keyframes drop {
+    from{ transform: scale(0.9); }
+    to{ transform: scale(1); }
+}
+
+
+.drop-select-option{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    gap: 5px;
+}
+
+.drop-select-option > p{
+    text-wrap: nowrap;
+}
+
+.drop-select-option:hover{
+    background-color: #EDF2F7;
+}
+

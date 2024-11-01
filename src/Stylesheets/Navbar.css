@@ -1,0 +1,169 @@
+
+
+.navbar{
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 70px 0 90px;
+    font-family: Bitmama;
+    color: #303131;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.blog-nav{
+    padding: 0 170px;
+}
+
+
+
+.nav-left{
+    width: 150px;
+    height: fit-content;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+}
+
+.nav-left > img:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+.nav-mid{
+    width: fit-content;
+    height: 100%;
+    /* background-color: beige; */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.option-wrap{
+    width: fit-content;
+    height: fit-content;
+    /* background-color: palegreen; */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.option-wrap > p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#option-wrap{
+    text-decoration: none;
+    color: inherit;
+}
+
+.option-wrap:hover{
+    transition: 200ms;
+    cursor: pointer;
+    scale: 1.02;
+    font-weight: 600;
+    color: #0D4740;
+}
+
+
+
+
+
+.nav-right{
+    width: fit-content;
+    height: 100%;
+    /* background-color: bisque; */
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#signup-link{
+    font-family: semibold;
+    font-size: 14.5px;
+    text-decoration: none;
+    color: #0D4740;
+}
+
+#signup-link:hover{
+    cursor: pointer;
+    font-family: bold;
+}
+
+
+button#nav-butn{
+    width: 160px;
+    height: 50px;
+    background-color: #0D4740;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: Bitmama;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+button#nav-butn:hover{
+    transition: 400ms;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #0D4740;
+    color: #0D4740;
+}
+
+
+
+
+.nav-burger{
+    width: 32px;
+    height: fit-content;
+    color: #0D4740;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1079px) {
+    .navbar{
+        padding: 0 25px 0 40px;
+    }
+    .nav-burger{
+        display: flex;
+    }
+    #signup-link{
+        display: none;
+    }
+    button#nav-butn{
+        display: none;
+    }
+    .nav-mid{
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .navbar{
+        padding: 0 25px;
+    }
+}

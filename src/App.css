@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: Bitmama;
+    src: url(./assets/FONTS/NGSwv5HMAFg6IuGlBNMjxLsH8ahuQ2e8.woff2);
+}
+
+@font-face {
+    font-family: light;
+    src: url(./assets/FONTS/clashdisplay-light_x6x6ag.woff2);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(./assets/FONTS/clashdisplay-medium_wiqcyq.woff2);
+}
+
+@font-face {
+    font-family: semibold;
+    src: url(./assets/FONTS/clashdisplay-semibold_vzv5kk.woff2);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(./assets/FONTS/clashdisplay-bold_p9ug95.woff2);
+}
