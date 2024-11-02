@@ -5,7 +5,7 @@ import ghs from "../assets/FLAGS/Flag_of_Ghana.png"
 import kes from "../assets/FLAGS/Flag_of_Kenya.png"
 import { GoChevronDown } from "react-icons/go";
 
-export const SmallSelector = () => {
+export const CountrySelector = () => {
 
     const countries = [{name: 'NGN', name2: 'Naira', flag: naija}, {name: 'GHS', name2: 'Ghana Cedis', flag: ghs}, {name: 'KES', name2: 'Kenyan Shilling', flag: kes}]
 
@@ -18,7 +18,7 @@ export const SmallSelector = () => {
             <div className="img-holder"  >
                 <img src={selected.flag} alt="" />
             </div>
-
+            
             <p style={{fontWeight:'600'}} > {selected.name} </p>
 
             <GoChevronDown />

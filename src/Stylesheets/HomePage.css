@@ -293,6 +293,7 @@ button.butn-margin{
 
 img#btc-icon{
     width: 22px;
+    height: 22px;
 }
 
 .btc-price > p{
@@ -444,6 +445,7 @@ img.card{
     width: 480px;
     position: absolute;
 }
+
 
 #card1{
     top: 20px;

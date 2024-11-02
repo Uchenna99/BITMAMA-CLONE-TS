@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Stylesheets/HomePage.css"
 import img1 from "../assets/SVG/received.svg"
-import img2 from "../assets/SVG/btc.svg"
 import google from "../assets/SVG/google-play.svg"
 import apple from "../assets/SVG/app-store.svg"
 import cube from "../assets/SVG/_cube.svg"
@@ -31,14 +30,21 @@ import Footer from "../Components/Footer";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import { SmallSelector } from "../Components/CountrySelector";
-import { CoinSelector } from "../Components/CoinSelector";
+import { Flag } from "../Components/CoinSelector";
+import { countries } from "../Components/CryptoFlags";
+import BuyComponent from "../Components/TradeModule/BuyComponent";
+import SellComponent from "../Components/TradeModule/SellComponent";
 
 
 const Homepage =()=>{
 
     const [buyCoin, changePage] = useState('buyside')
 
+    const [coinPrice, setCoinPrice] = useState<Flag>(countries[0])
+    
+    useEffect(()=>{
+        setCoinPrice(countries[0]);
+    }, [buyCoin])
 
     return(
         <>
@@ -72,46 +78,25 @@ const Homepage =()=>{
                         <div className="buy-sell-box">
                             <div className="buy-sell-wrap">
                                 <div className="buy-sell-label">
-                                    <div className="buy-section" onClick={()=>{changePage('buyside')}}>
+                                    <div className="buy-section" onClick={()=>{changePage('buyside');}}>
                                         <p>Buy</p>
                                         <div className="buy-border" style={{display: buyCoin==='buyside' ? 'flex' : 'none'}}></div>
                                     </div>
-                                    <div className="sell-section" onClick={()=>{changePage('sellside')}}>
+                                    <div className="sell-section" onClick={()=>{changePage('sellside');}}>
                                         <p>Sell</p>
                                         <div className="buy-border" style={{display: buyCoin==='sellside' ? 'flex' : 'none'}}></div>
                                     </div>
                                 </div>
-                                <div className="amount-box" style={{display: buyCoin === 'buyside' ? 'flex' : 'none'}}>
-                                    <label htmlFor="you-buy">You buy</label>
-                                    <input id="you-buy" type="number" placeholder="Amount in Naira" />
-
-                                    <SmallSelector />
-                                </div>
-
-                                <div className="amount-box" style={{display: buyCoin === 'sellside' ? 'flex' : 'none'}}>
-                                    <label htmlFor="you-buy">You sell</label>
-                                    <input id="you-buy" type="text" placeholder="0" />
-                                    <CoinSelector />
-                                </div>
+                                <BuyComponent BuySellState={buyCoin} coinUpdate={(update)=> setCoinPrice(update)} />
                                 
                                 <img id='received' src={img1} alt="" />
 
-                                <div className="amount-box" style={{display: buyCoin === 'buyside' ? 'flex' : 'none'}}>
-                                    <label htmlFor="you-buy">You get</label>
-                                    <input id="you-buy" type="text" placeholder="0" />
-                                    <CoinSelector />
-                                </div>
-
-                                <div className="amount-box" style={{display: buyCoin === 'sellside' ? 'flex' : 'none'}}>
-                                    <label htmlFor="you-buy">You get</label>
-                                    <input id="you-buy" type="text" placeholder="0" />
-                                    <SmallSelector />
-                                </div>
+                                <SellComponent BuySellState={buyCoin} coinUpdate={(update)=> setCoinPrice(update)} />
 
                                 <button id='hero-butn' className="butn-margin">Buy</button>
                                 <div className="btc-price">
-                                    <img id='btc-icon' src={img2} alt="" />
-                                    <p>1 BTC = 5 Naira</p>
+                                    <img id='btc-icon' src={coinPrice.flag} alt="" />
+                                    <p>1 {coinPrice.name} = 500 Naira</p>
                                 </div>
                             </div>
                         </div>
