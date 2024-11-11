@@ -1685,11 +1685,14 @@ img#vid-arrow{
     .left-box{
         padding: 20px 0 0 0;
     }
-    img.card{
-        width: 300px;
-    }
-    #card3{
+    img.card1{
         width: 250px;    
+    }
+    img.card2{
+        width: 250px;    
+    }
+    img.card3{
+        width: 220px;    
     }
     .cards-wrapper{
         height: 320px;
