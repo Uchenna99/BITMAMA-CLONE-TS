@@ -1,6 +1,5 @@
 import "../Stylesheets/BlogPage.css"
 import NavbarBlog from "../Components/NavbarBlog";
-import { Link } from "react-router-dom";
 import topimg from "../assets/bloo.png"
 import { RxDotFilled } from "react-icons/rx";
 import Footer from "../Components/Footer";
@@ -15,15 +14,32 @@ import indimg2 from "../assets/invest.jpg"
 import indimg1 from "../assets/industry1.png"
 import indsimg2 from "../assets/industry2.png"
 import indimg4 from "../assets/industry4.png"
+import Navbar from "../Components/Navbar";
+import BurgerMenu from "../Components/BurgerMenu/BurgerMenu";
+import { useState } from "react";
 
 
 
 
 const BlogPage =()=>{
+    const [isActive, setIsActive] = useState(false)
     return(
         <>
         
-            <NavbarBlog/>
+            <div className="blog-navb1">
+                <NavbarBlog/>
+            </div>
+
+            <div className="blog-navb2">
+                <Navbar activeSwitch={(switchIsActive)=> setIsActive(switchIsActive)} />
+            </div>
+
+            <div className="overlay" style={{display: isActive === true? 'block' : 'none'}} >
+                <div className="burger-display" >
+                    <BurgerMenu activeSwitch={(switchIsActive)=> setIsActive(switchIsActive)} />
+                </div>
+            </div>
+
             
            <div className="blog-section">
                 <div className="blog-hero-section-wrap">
@@ -41,7 +57,7 @@ const BlogPage =()=>{
                             <div className="blog-email-input">
                                 <svg id='login-arrow' width="25" height="24" viewBox="0 0 25 24" fill="none" aria-hidden="true" focusable="false"><path d="M17 15L20 12L17 9" stroke="currentColor" strokeWidth="1.2"></path><path d="M20 12H5" stroke="currentColor" strokeWidth="1.2"></path></svg>
                                 <input id='blog-email-add' type="email" placeholder="Enter your email address" />
-                                <Link to='/signup'><button id='blog-hero-butn'>Sign Up</button></Link>
+                                <button id='blog-hero-butn'>Sign Up</button>
                             </div>
                         </div>
                     </div>

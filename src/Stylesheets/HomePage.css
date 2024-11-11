@@ -1,4 +1,32 @@
 
+
+.overlay{
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.712);
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    padding-bottom: 5px;
+}
+
+.burger-display{
+    width: 450px;
+    min-height: 100vh;
+    background-color: #0d4740;
+    padding: 23px;
+    justify-self: end;
+    animation: menu 200ms 1 both linear;
+}
+
+@keyframes menu {
+    from{ transform: translateX(100%); }
+    to{ transform: translateX(0px); }
+}
+
+
+
 .homepage-wrap{
     width: 100%;
     height: fit-content;
@@ -442,37 +470,45 @@ img#cylinder{
 }
 
 img.card{
-    width: 480px;
+    /* width: 480px; */
     position: absolute;
 }
 
+.cardAnime{
+    /* display: none; */
+}
 
-#card1{
+
+.card1{
+    width: 480px;
     top: 20px;
     z-index: 3;
     animation-name: card1;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+    /* display: none; */
 }
 
-#card2{
+.card2{
+    width: 480px;
     top: 100px;
     z-index: 2;
     animation-name: card2;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+    /* display: none; */
 }
 
-#card3{
-    width: 420px;
+.card3{
+    width: 430px;
     top: 180px;
     animation-name: card3;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-
+    /* display: none; */
 }
 
 @keyframes card1 {
@@ -1778,6 +1814,14 @@ img#vid-arrow{
     }
 
     .amb-left{
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 450px) {
+    .burger-display{
         width: 100%;
     }
 }

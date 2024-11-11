@@ -142,6 +142,12 @@ button#nav-butn:hover{
 
 /* RESPONSIVENESS */
 
+@media screen and (max-width: 1319px) {
+    .blog-nav{
+        padding: 0 50px;
+    }
+}
+
 @media screen and (max-width: 1079px) {
     .navbar{
         padding: 0 25px 0 40px;

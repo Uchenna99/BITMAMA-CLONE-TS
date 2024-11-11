@@ -34,9 +34,19 @@ import { Flag } from "../Components/CoinSelector";
 import { countries } from "../Components/CryptoFlags";
 import BuyComponent from "../Components/TradeModule/BuyComponent";
 import SellComponent from "../Components/TradeModule/SellComponent";
+import BurgerMenu from "../Components/BurgerMenu/BurgerMenu";
 
 
 const Homepage =()=>{
+    // const obsCard = [document.querySelector('.card1'), document.querySelector('.card2'), document.querySelector('.card3')]
+    // const observer = new IntersectionObserver((entries)=>{entries.forEach((entry)=>
+    //     {entry.target.classList.toggle('cardAnime', entry.isIntersecting)})}, 
+    //     {threshold: 0.8})
+    // // observer.observe(obsCard[0])
+
+    // obsCard.forEach((ocard)=>{observer.observe(ocard)})
+
+    const [isActive, setIsActive] = useState(false)
 
     const [buyCoin, changePage] = useState('buyside')
 
@@ -49,9 +59,15 @@ const Homepage =()=>{
     return(
         <>
         
-        <Navbar/>
+        <Navbar activeSwitch={(switchIsActive)=> setIsActive(switchIsActive)} />
 
-        <div className="homepage-wrap">
+        <div className="overlay" style={{display: isActive === true? 'block' : 'none'}} >
+            <div className="burger-display" >
+                <BurgerMenu activeSwitch={(switchIsActive)=> setIsActive(switchIsActive)} />
+            </div>
+        </div>
+
+        <div className="homepage-wrap" style={{ height: isActive===true?'87vh':'fit-content'}} >
             <div className="hero-section">
                 <div className="hero-left">
                     <div className="hero-header">
@@ -137,9 +153,9 @@ const Homepage =()=>{
 
                 <div className="section2-right">
                     <div className="cards-wrapper">
-                        <img className='card' id="card1" src={card1} alt="" />
-                        <img className='card' id="card2" src={card3} alt="" />
-                        <img className='card' id="card3" src={card2} alt="" />
+                        <img className='card card1' src={card1} alt=""  />
+                        <img className='card card2' src={card3} alt="" />
+                        <img className='card card3' src={card2} alt="" />
                     </div>
                 </div>
             </div>
@@ -478,9 +494,10 @@ const Homepage =()=>{
                     <img id='vid-arrow' src={arrow} alt="" />
                 </div>
             </div>
+            <Footer/>
         </div>
 
-        <Footer/>
+        
         
         </>
     )

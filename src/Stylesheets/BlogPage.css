@@ -1,4 +1,14 @@
+.blog-navb1{
+    width: 100%;
+    height: fit-content;
+}
 
+.blog-navb2{
+    width: 100%;
+    height: fit-content;
+    display: none;
+    background-color: green;
+}
 
 .blog-section{
     width: 100%;
@@ -6,6 +16,8 @@
     padding: 0 170px 70px 170px;
     font-family: Bitmama;
 }
+
+
 
 
 .blog-hero-section-wrap{
@@ -85,7 +97,7 @@
     justify-content: space-between;
     align-items: center;
     color: rgb(242, 244, 243);
-    padding: 0 12px;
+    padding: 0 10px;
 }
 
 #blog-email-add{
@@ -176,6 +188,7 @@ button#blog-hero-butn:hover{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    /* background-color: green; */
 }
 
 .news-tag{
@@ -505,4 +518,96 @@ svg.circle-arrow{
 
 .prod-news-tag:hover{
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1319px) {
+    .blog-section{
+        padding: 0 50px 70px;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .blog-navb1{
+        display: none;
+    }
+    .blog-navb2{
+        display: flex;
+    }
+    .blog-section{
+        padding: 0 50px 70px;
+    }
+
+    .latest-stories-grid{
+        grid-template-columns: 1fr;
+    }
+    .latest-stories-head{
+        grid-column: 1;
+    }
+
+    .latest-stories-right{
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: space-between;   
+        padding-top: 20px;
+    }
+    .news-box2{
+        flex-direction: column;
+        width: 47%;
+    }
+    .news-img{
+        width: 100%;
+        height: 200px;
+    }
+    .newsbox-adjust{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .blog-section{
+        padding: 0 25px 70px;
+    }
+    #welcome-header{
+        font-size: 24px;
+        text-wrap: wrap;
+    }
+    .blog-hero-section{
+        height: 340px;
+    }
+
+    .news-box2{
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 519px) {
+    #welcome-text{
+        width: 100%;
+    }
+    .blog-email-input{
+        width: 100%;
+    }
+    
+    #blog-email-add{
+        width: 80%;
+    }
+    button#blog-hero-butn{
+        min-width: 105px;
+    }
 }
