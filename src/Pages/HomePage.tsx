@@ -35,6 +35,7 @@ import { countries } from "../Components/CryptoFlags";
 import BuyComponent from "../Components/TradeModule/BuyComponent";
 import SellComponent from "../Components/TradeModule/SellComponent";
 import BurgerMenu from "../Components/BurgerMenu/BurgerMenu";
+import { useInView } from "react-intersection-observer";
 
 
 const Homepage =()=>{
@@ -45,6 +46,20 @@ const Homepage =()=>{
     // // observer.observe(obsCard[0])
 
     // obsCard.forEach((ocard)=>{observer.observe(ocard)})
+
+    // const { ref, inView } = useInView({ threshold: 0.8 })
+    const {ref, inView} = useInView({threshold: 0.5})
+
+    // const [visibleElement, setVisibleElement] = useState<boolean>();
+    
+    // useEffect(()=>{
+    //     const observer = new IntersectionObserver((entries)=> {
+    //         const entry = entries[0];
+    //         setVisibleElement(entry.isIntersecting)
+    //     })
+    //     observer.observe(crd1)
+    // }, [])
+    
 
     const [isActive, setIsActive] = useState(false)
 
@@ -153,9 +168,9 @@ const Homepage =()=>{
 
                 <div className="section2-right">
                     <div className="cards-wrapper">
-                        <img className='card card1' src={card1} alt=""  />
-                        <img className='card card2' src={card3} alt="" />
-                        <img className='card card3' src={card2} alt="" />
+                        <img className='card1' ref={ref} src={card1} alt="" style={{animationName: inView === true? 'card1':'card1rev'}} />
+                        <img className='card2' src={card3} alt=""  />
+                        <img className='card3' src={card2} alt=""  />
                     </div>
                 </div>
             </div>

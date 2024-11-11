@@ -469,42 +469,42 @@ img#cylinder{
     position: relative;
 }
 
-img.card{
-    /* width: 480px; */
-    position: absolute;
+
+.card{
+    display: none;
 }
 
-.cardAnime{
-    /* display: none; */
-}
-
-
-.card1{
+img.card1{
     width: 480px;
+    position: absolute;
     top: 20px;
     z-index: 3;
-    animation-name: card1;
+    opacity: 0;
+    /* animation-name: card1; */
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     /* display: none; */
 }
 
-.card2{
+
+img.card2{
     width: 480px;
+    position: absolute;
     top: 100px;
     z-index: 2;
-    animation-name: card2;
+    /* animation-name: card2; */
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     /* display: none; */
 }
 
-.card3{
+img.card3{
     width: 430px;
+    position: absolute;
     top: 180px;
-    animation-name: card3;
+    /* animation: card3 2s 1 forwards; */
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
@@ -524,13 +524,38 @@ img.card{
         opacity: 1;
     }
 }
+@keyframes card1rev {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
 
 @keyframes card2 {
     from{
         transform: translateY(400px);
+        opacity: 0;
     }
     to{
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes card2rev {
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(400px);
+        opacity: 0;
     }
 }
 
@@ -542,6 +567,16 @@ img.card{
     to{
         transform: translateY(0);
         opacity: 1;
+    }
+}
+@keyframes card3rev {
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        transform: translateY(400px);
     }
 }
 
