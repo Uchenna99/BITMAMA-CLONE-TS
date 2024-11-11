@@ -428,11 +428,21 @@ img#cylinder{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    animation: 1s 1 forwards;
 }
 
 .left-box > p{
     font-size: 14px;
     line-height: 1.5;
+}
+
+@keyframes appear {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes disappear {
+    from{opacity: 1;}
+    to{opacity: 0;}
 }
 
 .grid-img{
@@ -479,12 +489,7 @@ img.card1{
     position: absolute;
     top: 20px;
     z-index: 3;
-    opacity: 0;
-    /* animation-name: card1; */
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    /* display: none; */
+    animation: 1s 1 forwards;
 }
 
 
@@ -493,22 +498,15 @@ img.card2{
     position: absolute;
     top: 100px;
     z-index: 2;
-    /* animation-name: card2; */
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    /* display: none; */
+    animation: 1.5s 1 forwards;
 }
+
 
 img.card3{
     width: 430px;
     position: absolute;
     top: 180px;
-    /* animation: card3 2s 1 forwards; */
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    /* display: none; */
+    animation: 2s 1 forwards;
 }
 
 @keyframes card1 {
