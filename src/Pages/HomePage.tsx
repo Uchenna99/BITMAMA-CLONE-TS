@@ -39,13 +39,13 @@ import { useInView } from "react-intersection-observer";
 
 
 const Homepage =()=>{
-    const {ref:ref1, inView: crd1} = useInView({threshold: 0.7})    
-    const {ref: ref2, inView: crd2} = useInView({threshold: 0.8})
+    const {ref:ref1, inView: crd1} = useInView({threshold: 0.6})    
+    const {ref: ref2, inView: crd2} = useInView({threshold: 0.7})
+    const {ref: ref3, inView: grd1} = useInView({threshold: 0.5})
+    const {ref: ref4, inView: grd2} = useInView({threshold: 0.8})
 
     const [isActive, setIsActive] = useState(false)
-
     const [buyCoin, changePage] = useState('buyside')
-
     const [coinPrice, setCoinPrice] = useState<Flag>(countries[0])
     
     useEffect(()=>{
@@ -122,25 +122,25 @@ const Homepage =()=>{
             </div>
 
             <div className="section2">
-                <div className="section2-left">
-                    <div className="sec2-grid">
+                <div ref={ref3} className="section2-left">
+                    <div ref={ref4} className="sec2-grid">
                         <div className="left-header">
                             <h2>Pay for Everything you need with your Bitmama Crypto Card</h2>
                             <p>Spend over $10,000 monthly with your physical and virtual crypto debit card</p>
                         </div>
-                        <div className="left-box" style={{animationName: crd1? 'appear':'disappear'}} >
+                        <div className="left-box" style={{animationName: grd1? 'appear':'disappear'}} >
                             <div className="grid-img"></div>
                             <p>Shop from global stores like Amazon, ASOS etc</p>
                         </div>
-                        <div className="left-box" style={{animationName: crd1? 'appear':'disappear'}} >
+                        <div className="left-box" style={{animationName: grd1? 'appear':'disappear'}} >
                             <div className="grid-img"></div>
                             <p>Make International Payments</p>
                         </div>
-                        <div className="left-box" style={{animationName: crd2? 'appear':'disappear'}} >
+                        <div className="left-box" style={{animationName: grd2? 'appear':'disappear'}} >
                             <div className="grid-img"></div>
                             <p>Seamlessly pay on POS terminals and ATMs around the world</p>
                         </div>
-                        <div className="left-box" style={{animationName: crd2? 'appear':'disappear'}} >
+                        <div className="left-box" style={{animationName: grd2? 'appear':'disappear'}} >
                             <div className="grid-img"></div>
                             <p>Pay international bills like Spotify, Google Workspace and AWS subscription</p>
                         </div>
