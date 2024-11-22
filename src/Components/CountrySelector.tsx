@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import "../Stylesheets/Selector.css"
 import naija from "../assets/FLAGS/Flag_of_Nigeria.png"
 import ghs from "../assets/FLAGS/Flag_of_Ghana.png"
