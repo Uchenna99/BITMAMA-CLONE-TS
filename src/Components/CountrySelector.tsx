@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import "../Stylesheets/Selector.css"
 import naija from "../assets/FLAGS/Flag_of_Nigeria.png"
 import ghs from "../assets/FLAGS/Flag_of_Ghana.png"
@@ -11,6 +11,7 @@ export const CountrySelector = () => {
 
     const [toggle, setToggle] = useState(false);
     const [selected, setSelected] = useState({name: 'NGN', name2: 'Naira', flag: naija})
+    
   return (
     <>
         <div className="select-div" onClick={()=> setToggle(!toggle)} >

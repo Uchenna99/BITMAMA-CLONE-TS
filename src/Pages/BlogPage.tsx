@@ -42,26 +42,29 @@ const BlogPage =()=>{
 
             
            <div className="blog-section">
-                <div className="blog-hero-section-wrap">
-                    <div className="blog-hero-section">
-                        <div className="blog-hero-content">
+                <div className="main-blog-wrap">
+                    <div className="blog-hero-section-wrap">
+                        <div className="blog-hero-section">
+                            <div className="blog-hero-content">
 
-                            <div className="bit-blog-header">
-                                <p>Bitmama Blog</p>
-                            </div>
+                                <div className="bit-blog-header">
+                                    <p>Bitmama Blog</p>
+                                </div>
 
-                            <h1 id='welcome-header'>Welcome to <span id='our-blog'>Our Blog</span></h1>
+                                <h1 id='welcome-header'>Welcome to <span id='our-blog'>Our Blog</span></h1>
 
-                            <p id='welcome-text'>Sign up to our weekly newsletter and stay up-to-date on the latest stories in the Crypto and Fintech spaces</p>
+                                <p id='welcome-text'>Sign up to our weekly newsletter and stay up-to-date on the latest stories in the Crypto and Fintech spaces</p>
 
-                            <div className="blog-email-input">
-                                <svg id='login-arrow' width="25" height="24" viewBox="0 0 25 24" fill="none" aria-hidden="true" focusable="false"><path d="M17 15L20 12L17 9" stroke="currentColor" strokeWidth="1.2"></path><path d="M20 12H5" stroke="currentColor" strokeWidth="1.2"></path></svg>
-                                <input id='blog-email-add' type="email" placeholder="Enter your email address" />
-                                <button id='blog-hero-butn'>Sign Up</button>
+                                <div className="blog-email-input">
+                                    <svg id='login-arrow' width="25" height="24" viewBox="0 0 25 24" fill="none" aria-hidden="true" focusable="false"><path d="M17 15L20 12L17 9" stroke="currentColor" strokeWidth="1.2"></path><path d="M20 12H5" stroke="currentColor" strokeWidth="1.2"></path></svg>
+                                    <input id='blog-email-add' type="email" placeholder="Enter your email address" />
+                                    <button id='blog-hero-butn'>Sign Up</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
 
                 <div className="latest-stories-grid">
 

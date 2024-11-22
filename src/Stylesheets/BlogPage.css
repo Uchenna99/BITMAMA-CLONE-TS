@@ -16,6 +16,11 @@
     padding: 0 170px 70px 170px;
     font-family: Bitmama;
 }
+.main-blog-wrap{
+    width: 100%;
+    height: fit-content;
+
+}
 
 
 
@@ -25,6 +30,8 @@
     height: fit-content;
     background-color: rgba(10, 56, 50);
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -71,6 +78,7 @@
     font-family: bold;
     font-size: 50px;
     color: white;
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -546,12 +554,10 @@ svg.circle-arrow{
     .blog-navb2{
         display: flex;
     }
-    .blog-section{
-        padding: 0 50px 70px;
-    }
 
     .latest-stories-grid{
         grid-template-columns: 1fr;
+        padding: 40px 0;
     }
     .latest-stories-head{
         grid-column: 1;
@@ -581,13 +587,24 @@ svg.circle-arrow{
     .blog-section{
         padding: 0 25px 70px;
     }
+    .main-blog-wrap{
+        height: 340px;
+    }
     #welcome-header{
         font-size: 24px;
         text-wrap: wrap;
     }
     .blog-hero-section{
         height: 340px;
+        position: absolute;
+        border-radius: 0;
     }
+    .blog-hero-content{
+        padding: 10px 20px;
+    }
+    /* .blog-hero-content{
+        width: 100%;
+    } */
 
     .news-box2{
         width: 100%;
@@ -597,6 +614,9 @@ svg.circle-arrow{
 
 
 @media screen and (max-width: 519px) {
+    .blog-section{
+        padding: 0 20px 70px;
+    }
     #welcome-text{
         width: 100%;
     }
