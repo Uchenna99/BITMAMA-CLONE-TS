@@ -1255,7 +1255,7 @@ img#people{
 
 .portfolio-left > img{
     width: 300px;
-    animation: portf-img 500ms 1 linear;
+    animation: 500ms 1 linear forwards;
 }
 
 img#port-bit{
@@ -1263,22 +1263,34 @@ img#port-bit{
     position: absolute;
     top: 0;
     left: 0;
-    animation: bitc 500ms 1 linear;
+    animation: 500ms 1 linear forwards;
 }
 
 @keyframes bitc {
     from{transform: translateX(-130px); opacity: 0;}
     to{transform: translateX(0); opacity: 1;}
 }
+@keyframes bitcrev {
+    from{transform: translateX(0); opacity: 1;}
+    to{transform: translateX(-130px); opacity: 0;}
+}
 
 @keyframes portf-img {
     from{transform: translateY(170px); opacity: 0;}
     to{transform: translateY(0); opacity: 1;}
 }
+@keyframes portf-imgrev {
+    from{transform: translateY(0); opacity: 1;}
+    to{transform: translateY(170px); opacity: 0;}
+}
 
 @keyframes portf-txt {
     from{transform: translateY(90px); opacity: 0;}
     to{transform: translateY(0); opacity: 1;}
+}
+@keyframes portf-txtrev {
+    from{transform: translateY(0); opacity: 1;}
+    to{transform: translateY(90px); opacity: 0;}
 }
 
 
@@ -1297,7 +1309,7 @@ img#port-bit{
     font-family: bold;
     font-size: 29px;
     line-height: 1.2;
-    animation: portf-txt 500ms 1 linear;
+    animation: 500ms 1 linear forwards;
 }
 
 
@@ -1319,6 +1331,8 @@ img#port-bit{
     align-items: center;
     padding: 40px 25px;
     gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .promo-section > h2{

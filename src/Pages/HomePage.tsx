@@ -47,7 +47,8 @@ const Homepage =()=>{
     const {ref: ref6, inView: grdTxt1} = useInView({threshold: 0.9})
     const {ref: ref7, inView: grdTxt2} = useInView({threshold: 0.9})
     const {ref: ref8, inView: grdTxt3} = useInView({threshold: 0.9})
-    const {ref: ref9, inView: grdTxt4} = useInView({threshold: 0.9})
+    const {ref: ref9, inView: grdTxt4} = useInView({threshold: 1})
+    const {ref: ref10, inView: portfolio} = useInView({threshold: 0.4})
 
 
     const [isActive, setIsActive] = useState(false)
@@ -455,12 +456,12 @@ const Homepage =()=>{
             </div>
 
             <div className="portfolio-section">
-                <div className="portfolio-left">
-                    <img  src={portfo} alt="" />
-                    <img id='port-bit' src={bitc} alt="" />
+                <div ref={ref10} className="portfolio-left" >
+                    <img  src={portfo} alt="" style={{animationName: portfolio? 'portf-img':'portf-imgrev'}} />
+                    <img id='port-bit' src={bitc} alt="" style={{animationName: portfolio? 'bitc':'bitcrev'}} />
                 </div>
                 <div className="portfolio-right">
-                    <h2>Robust and secure—a crypto portfolio you’ll be proud of</h2>
+                    <h2 style={{animationName: portfolio? 'portf-txt':'portf-txtrev'}} >Robust and secure—a crypto portfolio you’ll be proud of</h2>
                     <button id='hero-butn'>Build A Portfolio</button>
                 </div>
             </div>
