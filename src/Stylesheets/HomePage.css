@@ -629,6 +629,7 @@ img.card3{
     display: flex;
     align-items: center;
     gap: 15px;
+    animation: 1s 1 forwards;
 }
 
 .sec3-text-img{
@@ -652,6 +653,24 @@ img.card3{
 .sec3-text-text > p{
     font-size: 14px;
     line-height: 1.4;
+}
+
+@keyframes sec3txt {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes sec3txtrev {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+
+@keyframes sec3txtmove {
+    from{opacity: 0; transform: translateY(50px);}
+    to{opacity: 1; transform: translateY(0);}
+}
+@keyframes sec3txtmoverev {
+    from{opacity: 1; transform: translateY(0);}
+    to{opacity: 0; transform: translateY(50px);}
 }
 
 

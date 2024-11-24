@@ -43,6 +43,12 @@ const Homepage =()=>{
     const {ref: ref2, inView: crd2} = useInView({threshold: 0.7})
     const {ref: ref3, inView: grd1} = useInView({threshold: 0.5})
     const {ref: ref4, inView: grd2} = useInView({threshold: 0.8})
+    const {ref: ref5, inView: grdTxt} = useInView({threshold: 0.9})
+    const {ref: ref6, inView: grdTxt1} = useInView({threshold: 0.9})
+    const {ref: ref7, inView: grdTxt2} = useInView({threshold: 0.9})
+    const {ref: ref8, inView: grdTxt3} = useInView({threshold: 0.9})
+    const {ref: ref9, inView: grdTxt4} = useInView({threshold: 0.9})
+
 
     const [isActive, setIsActive] = useState(false)
     const [buyCoin, changePage] = useState('buyside')
@@ -160,7 +166,7 @@ const Homepage =()=>{
                 <div className="section3-grid">
                     <div className="sec3-grid-box g-1">
                         <h3>Crypto Trading Made Easy</h3>
-                        <div className="sec3-text">
+                        <div ref={ref5} className="sec3-text" style={{animationName: grdTxt? 'sec3txt':'sec3txtrev'}} >
                             <div className="sec3-text-img"></div>
                             <div className="sec3-text-text">
                                 <p>Trade Bitcoin, Ethereum, Tether (USDT), Stellar, Ripple, Matic, USDC and your favorite cryptocurrencies on the Bitmama trading platform</p>
@@ -195,25 +201,25 @@ const Homepage =()=>{
                     <div className="sec3-grid-box g-8">
                         <h3>Do more with crypto</h3>
                         <div className="do-more-wrap">
-                            <div className="sec3-text">
+                            <div ref={ref6} className="sec3-text" style={{animationName: grdTxt1? 'sec3txt':'sec3txtrev'}}>
                                 <div className="sec3-text-img small-img"></div>
                                 <div className="sec3-text-text">
                                     <p>Purchase airtime and data with your crypto wallet</p>
                                 </div>
                             </div>
-                            <div className="sec3-text">
+                            <div ref={ref7} className="sec3-text" style={{animationName: grdTxt2? 'sec3txt':'sec3txtrev'}} >
                                 <div className="sec3-text-img small-img"></div>
                                 <div className="sec3-text-text">
                                     <p>Fund Mobile Money wallets</p>
                                 </div>
                             </div>
-                            <div className="sec3-text">
+                            <div ref={ref8} className="sec3-text" style={{animationName: grdTxt3? 'sec3txtmove':'sec3txtmoverev'}} >
                                 <div className="sec3-text-img small-img"></div>
                                 <div className="sec3-text-text">
                                     <p>Spend cryptocurrencies directly without first converting to fiat</p>
                                 </div>
                             </div>
-                            <div className="sec3-text">
+                            <div ref={ref9} className="sec3-text" style={{animationName: grdTxt4? 'sec3txtmove':'sec3txtmoverev'}} >
                                 <div className="sec3-text-img small-img"></div>
                                 <div className="sec3-text-text">
                                     <p>Send and receive fiat and crypto globally</p>
