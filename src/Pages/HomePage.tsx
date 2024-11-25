@@ -49,6 +49,7 @@ const Homepage =()=>{
     const {ref: ref8, inView: grdTxt3} = useInView({threshold: 0.9})
     const {ref: ref9, inView: grdTxt4} = useInView({threshold: 1})
     const {ref: ref10, inView: portfolio} = useInView({threshold: 0.4})
+    const {ref: ref11, inView: portfolioTxt} = useInView({threshold: 0.3})
 
 
     const [isActive, setIsActive] = useState(false)
@@ -173,7 +174,7 @@ const Homepage =()=>{
                                 <p>Trade Bitcoin, Ethereum, Tether (USDT), Stellar, Ripple, Matic, USDC and your favorite cryptocurrencies on the Bitmama trading platform</p>
                             </div>
                         </div>
-                        <button id='hero-butn' className="sec3-butn">Start Crypto Trading</button>
+                        <Link to={'/signup'}><button id='hero-butn' className="sec3-butn">Start Crypto Trading</button></Link>
                     </div>
                     <div className="sec3-grid-box sec3-img g-2"></div>
                     <div className="sec3-grid-box sec3-img sec3-img2 g-3"></div>
@@ -460,8 +461,8 @@ const Homepage =()=>{
                     <img  src={portfo} alt="" style={{animationName: portfolio? 'portf-img':'portf-imgrev'}} />
                     <img id='port-bit' src={bitc} alt="" style={{animationName: portfolio? 'bitc':'bitcrev'}} />
                 </div>
-                <div className="portfolio-right">
-                    <h2 style={{animationName: portfolio? 'portf-txt':'portf-txtrev'}} >Robust and secure—a crypto portfolio you’ll be proud of</h2>
+                <div ref={ref11} className="portfolio-right">
+                    <h2 style={{animationName: portfolioTxt? 'portf-txt':'portf-txtrev'}} >Robust and secure—a crypto portfolio you’ll be proud of</h2>
                     <button id='hero-butn'>Build A Portfolio</button>
                 </div>
             </div>

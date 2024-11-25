@@ -32,9 +32,10 @@ const BurgerMenu = ( {activeSwitch}: BurgMenu ) => {
                 <p id="extra">Crypto Cards</p>
             </div>
 
-            <button id="signin"><p>Sign In</p></button>
+            <Link to={"/login"}><button id="signin"><p>Sign In</p></button></Link>
+            
 
-            <button id="started"><p>Get Started</p></button>
+            <Link to={"/signup"}><button id="started"><p>Get Started</p></button></Link>
             
         </div>
 
