@@ -131,7 +131,7 @@ const Homepage =()=>{
 
             <div className="section2">
                 <div ref={ref3} className="section2-left">
-                    <div ref={ref4} className="sec2-grid">
+                    <div className="sec2-grid">
                         <div className="left-header">
                             <h2>Pay for Everything you need with your Bitmama Crypto Card</h2>
                             <p>Spend over $10,000 monthly with your physical and virtual crypto debit card</p>
@@ -144,7 +144,7 @@ const Homepage =()=>{
                             <div className="grid-img"></div>
                             <p>Make International Payments</p>
                         </div>
-                        <div className="left-box" style={{animationName: grd2? 'appear':'disappear'}} >
+                        <div ref={ref4} className="left-box" style={{animationName: grd2? 'appear':'disappear'}} >
                             <div className="grid-img"></div>
                             <p>Seamlessly pay on POS terminals and ATMs around the world</p>
                         </div>
