@@ -3,9 +3,13 @@ import logo from "../assets/SVG/bitmama-green.svg"
 import { BiChevronDown } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { BurgMenu } from "./BurgerMenu/BurgerMenu";
+import arrow from "../assets/SVG/changera_nrgura.svg"
+import { useState } from "react";
 
 
 const Navbar =({activeSwitch}: BurgMenu)=>{
+    const [products, setProducts] = useState(false);
+
     return(
         <>
         
@@ -14,9 +18,9 @@ const Navbar =({activeSwitch}: BurgMenu)=>{
                     <img src={logo} alt="" />
                 </div>
                 <div className="nav-mid">
-                    <div className="option-wrap">
+                    <div className="option-wrap" onClick={()=>setProducts(!products)} >
                         <p>Products</p>
-                        <BiChevronDown/>
+                        <BiChevronDown style={{rotate: products? '180deg':''}} />
                     </div>
                     <div className="option-wrap">
                         <p>Company</p>
@@ -30,6 +34,19 @@ const Navbar =({activeSwitch}: BurgMenu)=>{
                     </div>
                     <div className="option-wrap">
                         <p><Link to='/blog' id="option-wrap">Blog</Link></p>
+                    </div>
+
+                    <div className="prod-drop-down" style={{animationName: products? 'dropdown':'dropdownrev'}} >
+                        <div className="bitwaya-wrap">
+                            <img src={arrow} alt="" />
+                            <p>Bitwaya</p>
+                        </div>
+
+                        <div className="bitwaya-wrap">
+                            <img src={arrow} alt="" />
+                            <p>Developer Tools</p>
+                            <p>Take advantage of our Developer tools</p>
+                        </div>                          
                     </div>
                 </div>
 

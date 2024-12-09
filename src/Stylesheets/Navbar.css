@@ -44,6 +44,7 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    position: relative;
 }
 
 .option-wrap{
@@ -127,6 +128,44 @@ button#nav-butn:hover{
     height: fit-content;
     color: #0D4740;
     display: none;
+}
+
+
+
+
+.prod-drop-down{
+    width: 1000px;
+    height: 130px;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: absolute;
+    top: 75px;
+    left: -250px;
+    animation: dropdown 100ms 1 forwards linear;
+}
+
+
+.bitwaya-wrap{
+    width: fit-content;
+    height: fit-content;
+    /* background-color: beige; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+@keyframes dropdown {
+    from{ opacity: 0; transform: translateX(-200px); }
+    to{ opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dropdownrev {
+    from{ opacity: 1; transform: translateX(0); }
+    to{ opacity: 0; transform: translateX(-200px); }
 }
 
 
