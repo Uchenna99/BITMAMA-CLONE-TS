@@ -5,6 +5,7 @@ import btcimg from "../assets/signupbtc.png"
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { Navigate } from "react-router-dom";
 
 
 interface CredentialResponse {
@@ -13,12 +14,29 @@ interface CredentialResponse {
     select_by: 'btn' | 'auto' | 'user';
 }
 
+interface GoogleAuthPayload {
+    iss: string;
+    azp: string;
+    aud: string;
+    sub: string;
+    email: string;
+    email_verified: boolean;
+    exp: number;
+    family_name: string;
+    given_name: string;
+    iat: number;
+    jti: string;
+    name: string;
+    nbf: number;
+    picture: string;
+}
+
 
 const LoginPage =()=>{
 
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
-    const [googleCred, setgoogleCred] = useState<CredentialResponse | null>(null)
+    const [googleCred, setgoogleCred] = useState<GoogleAuthPayload | null>(null);
 
     const SubmitLogin = async (e: { preventDefault: () => void; })=>{
         e.preventDefault()
@@ -34,8 +52,10 @@ const LoginPage =()=>{
     }
 
     const onSuccess = (credentialResponse: any)=>{
+        const googleRes = jwtDecode(credentialResponse.credential) as GoogleAuthPayload;
         console.log('Login Successful', jwtDecode(credentialResponse.credential));
-        setgoogleCred(jwtDecode(credentialResponse.credential))
+        setgoogleCred(googleRes);
+        console.log(googleCred);
     };
 
     return(
