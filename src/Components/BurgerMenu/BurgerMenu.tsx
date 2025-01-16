@@ -7,7 +7,10 @@ import google from "../../assets/SVG/google-play.svg"
 import apple from "../../assets/SVG/app-store.svg"
 import { Link } from "react-router-dom";
 
- export interface BurgMenu { activeSwitch: (isActive: boolean)=> void; }
+ export interface BurgMenu { 
+    activeSwitch: (isActive: boolean)=> void; 
+    nameUpd?: string;
+}
 
 const BurgerMenu = ( {activeSwitch}: BurgMenu ) => {
   return (

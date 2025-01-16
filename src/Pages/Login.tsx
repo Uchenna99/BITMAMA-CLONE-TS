@@ -7,20 +7,19 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthPayload } from "../context/GlobalContext";
+import useGlobalState from "../context/GlobalState";
 
-interface CredentialResponse {
-    credential: string;
-    clientId: string;
-    select_by: 'btn' | 'auto' | 'user';
-}
-
+// interface CredentialResponse {
+//     credential: string;
+//     clientId: string;
+//     select_by: 'btn' | 'auto' | 'user';
+// }
 
 
 
 const LoginPage =()=>{
-    // const { googleCred, setgoogleCred } = useOAuthContext();
+    const { setUserName } = useGlobalState();
     const navigate = useNavigate();
-    const [googleCred, setgoogleCred] = useState('');
 
 
     const [Email, setEmail] = useState('')
@@ -42,7 +41,8 @@ const LoginPage =()=>{
     const onSuccess = (resp:any)=>{
         const googleRes = jwtDecode(resp.credential) as GoogleAuthPayload;
         console.log(googleRes.name);
-        setgoogleCred(googleRes.name);
+        setUserName(googleRes.name);
+        navigate('/');
     };
 
     return(
@@ -64,7 +64,7 @@ const LoginPage =()=>{
                         </div>
 
                         <div className="signup-header">
-                            <h2>Hello! {googleCred} We’re glad to have you back</h2>
+                            <h2>Hello! We’re glad to have you back</h2>
                             <img id='header-btc' src={btcimg} alt="" />
                         </div>
 
