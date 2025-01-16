@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-import { GoogleAuthPayload, OAuthContext } from "../context/GlobalContext";
-import { useOAuthContext } from "../context/GlobalContext";
-
+import { GoogleAuthPayload } from "../context/GlobalContext";
 
 interface CredentialResponse {
     credential: string;
@@ -22,7 +20,7 @@ interface CredentialResponse {
 const LoginPage =()=>{
     // const { googleCred, setgoogleCred } = useOAuthContext();
     const navigate = useNavigate();
-    const [googleCred, setgoogleCred] = useState<GoogleAuthPayload | null>(null);
+    const [googleCred, setgoogleCred] = useState('');
 
 
     const [Email, setEmail] = useState('')
@@ -41,12 +39,10 @@ const LoginPage =()=>{
         
     }
 
-    const onSuccess = (credentialResponse: any)=>{
-        const googleRes = jwtDecode(credentialResponse.credential) as GoogleAuthPayload;
-        console.log('Login Successful', jwtDecode(credentialResponse.credential));
-        setgoogleCred(googleRes);
-        console.log(googleCred);
-        navigate('/')
+    const onSuccess = (resp:any)=>{
+        const googleRes = jwtDecode(resp.credential) as GoogleAuthPayload;
+        console.log(googleRes.name);
+        setgoogleCred(googleRes.name);
     };
 
     return(
@@ -68,7 +64,7 @@ const LoginPage =()=>{
                         </div>
 
                         <div className="signup-header">
-                            <h2>Hello! We’re glad to have you back</h2>
+                            <h2>Hello! {googleCred} We’re glad to have you back</h2>
                             <img id='header-btc' src={btcimg} alt="" />
                         </div>
 
@@ -105,6 +101,8 @@ const LoginPage =()=>{
                                     <p>OR</p>
                                     <GoogleLogin 
                                         onSuccess={onSuccess}
+                                        onError={()=>console.log('Auth failed!')
+                                        }
                                     />
                                 </div>
                             </div>
