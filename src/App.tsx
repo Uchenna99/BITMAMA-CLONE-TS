@@ -8,9 +8,9 @@ import SignupPage from './Pages/Signup'
 function App() {
 
   return (
-    <>
+    <>      
         <Routes>
-            <Route path='/' element={<Homepage/>} />
+            <Route path='' element={<Homepage/>} />
             <Route path='/blog' element={<BlogPage/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/signup' element={<SignupPage/>}/>
@@ -19,4 +19,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

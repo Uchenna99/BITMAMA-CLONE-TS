@@ -5,7 +5,9 @@ import btcimg from "../assets/signupbtc.png"
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { GoogleAuthPayload, OAuthContext } from "../context/GlobalContext";
+import { useOAuthContext } from "../context/GlobalContext";
 
 
 interface CredentialResponse {
@@ -14,29 +16,17 @@ interface CredentialResponse {
     select_by: 'btn' | 'auto' | 'user';
 }
 
-interface GoogleAuthPayload {
-    iss: string;
-    azp: string;
-    aud: string;
-    sub: string;
-    email: string;
-    email_verified: boolean;
-    exp: number;
-    family_name: string;
-    given_name: string;
-    iat: number;
-    jti: string;
-    name: string;
-    nbf: number;
-    picture: string;
-}
+
 
 
 const LoginPage =()=>{
+    // const { googleCred, setgoogleCred } = useOAuthContext();
+    const navigate = useNavigate();
+    const [googleCred, setgoogleCred] = useState<GoogleAuthPayload | null>(null);
+
 
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
-    const [googleCred, setgoogleCred] = useState<GoogleAuthPayload | null>(null);
 
     const SubmitLogin = async (e: { preventDefault: () => void; })=>{
         e.preventDefault()
@@ -56,6 +46,7 @@ const LoginPage =()=>{
         console.log('Login Successful', jwtDecode(credentialResponse.credential));
         setgoogleCred(googleRes);
         console.log(googleCred);
+        navigate('/')
     };
 
     return(
