@@ -3,13 +3,23 @@ import "../Stylesheets/LoginPage.css"
 import signupphone from "../assets/signupimg.png"
 import btcimg from "../assets/signupbtc.png"
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
 
+
+interface CredentialResponse {
+    credential: string;
+    clientId: string;
+    select_by: 'btn' | 'auto' | 'user';
+}
 
 
 const LoginPage =()=>{
 
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
+    const [googleCred, setgoogleCred] = useState<CredentialResponse | null>(null)
+
     const SubmitLogin = async (e: { preventDefault: () => void; })=>{
         e.preventDefault()
         // const SendLogin = {Email, Password}
@@ -22,6 +32,11 @@ const LoginPage =()=>{
         console.log(Email);
         
     }
+
+    const onSuccess = (credentialResponse: any)=>{
+        console.log('Login Successful', jwtDecode(credentialResponse.credential));
+        setgoogleCred(jwtDecode(credentialResponse.credential))
+    };
 
     return(
         <>
@@ -74,8 +89,16 @@ const LoginPage =()=>{
                                         <svg id='login-arrow' width="25" height="24" viewBox="0 0 25 24" fill="none" aria-hidden="true" focusable="false"><path d="M17 15L20 12L17 9" stroke="currentColor" strokeWidth="1.2"></path><path d="M20 12H5" stroke="currentColor" strokeWidth="1.2"></path></svg>
                                     </button>
                                 </Link>
+
+                                <div className="google-login">
+                                    <p>OR</p>
+                                    <GoogleLogin 
+                                        onSuccess={onSuccess}
+                                    />
+                                </div>
                             </div>
                         </form>
+
 
                         <div className="bottom-section">
                             <p id='not-you'>Not you? <Link to='/signup' id='botton-signup'>Sign Up</Link> </p>

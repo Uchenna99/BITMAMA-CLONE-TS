@@ -144,7 +144,7 @@ button#nav-butn:hover{
     position: absolute;
     top: 75px;
     left: -250px;
-    animation: dropdown 100ms 1 forwards linear;
+    animation: 100ms 1 forwards linear;
 }
 
 
