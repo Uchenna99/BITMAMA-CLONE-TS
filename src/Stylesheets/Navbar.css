@@ -17,6 +17,7 @@
 
 .blog-nav{
     padding: 0 170px;
+    
 }
 
 
@@ -85,6 +86,13 @@
     display: flex;
     align-items: center;
     gap: 50px;
+}
+
+.nav-right > h4{
+    font-family: semibold;
+    font-size: 14px;
+    color: #0D4740;
+    text-align: center;
 }
 
 #signup-link{
@@ -210,5 +218,8 @@ button#nav-butn:hover{
 @media screen and (max-width: 767px) {
     .navbar{
         padding: 0 25px;
+    }
+    .nav-right{
+        gap: 10px;
     }
 }

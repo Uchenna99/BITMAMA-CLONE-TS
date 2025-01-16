@@ -1,10 +1,13 @@
 import "../Stylesheets/Navbar.css"
 import logo from "../assets/SVG/bitmama-green.svg"
 import { Link } from "react-router-dom";
+import useGlobalState from "../context/GlobalState";
 
 
 
 const NavbarBlog =()=>{
+    const { userName } = useGlobalState();
+
     return(
         <>
         
@@ -43,7 +46,12 @@ const NavbarBlog =()=>{
                 </div>
 
                 <div className="nav-right">
-                    <Link to='/signup'><button id='nav-butn'>Get Started</button></Link>
+                    {
+                        userName?
+                        <h4> Hi, {userName} </h4> :
+                        <Link to='/signup'><button id='nav-butn'>Get Started</button></Link>
+                    }
+                    
                 </div>
             </div>
 

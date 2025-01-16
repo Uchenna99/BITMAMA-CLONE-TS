@@ -25,7 +25,7 @@ const BlogPage =()=>{
     const [isActive, setIsActive] = useState(false)
     return(
         <>
-        
+        <div className="blog-wrapper">
             <div className="blog-navb1">
                 <NavbarBlog/>
             </div>
@@ -530,7 +530,7 @@ const BlogPage =()=>{
            </div>
 
            <Footer/>
-        
+        </div>
         </>
     )
 }

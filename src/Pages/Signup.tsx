@@ -3,10 +3,24 @@ import signupphone from "../assets/signupimg.png"
 import btcimg from "../assets/signupbtc.png"
 import { Link } from "react-router-dom";
 import SelectMenu from "../Components/SelectMenu";
+import { GoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
+import useGlobalState from "../context/GlobalState";
+import { jwtDecode } from "jwt-decode";
+import { GoogleAuthPayload } from "../context/GlobalContext";
 
 
 
 const SignupPage =()=>{
+    const { setUserName } = useGlobalState();
+    const navigate = useNavigate();
+
+    const onSuccess = (resp:any)=>{
+        const googleRes = jwtDecode(resp.credential) as GoogleAuthPayload;
+        console.log(googleRes.name);
+        setUserName(googleRes.name);
+        navigate('/');
+    };
 
     return(
         <>
@@ -49,6 +63,15 @@ const SignupPage =()=>{
                                         <svg id='login-arrow' width="25" height="24" viewBox="0 0 25 24" fill="none" aria-hidden="true" focusable="false" ><path d="M17 15L20 12L17 9" stroke="currentColor" strokeWidth="1.2"></path><path d="M20 12H5" stroke="currentColor" strokeWidth="1.2"></path></svg>
                                     </button>
                                 </Link>
+
+                                <div className="google-login">
+                                    <p>OR</p>
+                                    <GoogleLogin
+                                        onSuccess={onSuccess}
+                                        onError={()=>console.log('Auth failed!')
+                                        }
+                                    />
+                                </div>
                             </div>
                         </form>
 
