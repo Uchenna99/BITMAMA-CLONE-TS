@@ -15,8 +15,8 @@ const SignupPage =()=>{
     const { setUserName } = useGlobalState();
     const navigate = useNavigate();
 
-    const onSuccess = (resp:any)=>{
-        const googleRes = jwtDecode(resp.credential) as GoogleAuthPayload;
+    const onSuccess = async (resp:any)=>{
+        const googleRes = await jwtDecode(resp.credential) as GoogleAuthPayload;
         console.log(googleRes.name);
         setUserName(googleRes.name);
         navigate('/');
@@ -68,8 +68,11 @@ const SignupPage =()=>{
                                     <p>OR</p>
                                     <GoogleLogin
                                         onSuccess={onSuccess}
-                                        onError={()=>console.log('Auth failed!')
-                                        }
+                                        onError={()=>console.log('Auth failed!')}
+                                        theme="filled_blue"
+                                        text="signup_with"
+                                        shape="pill"
+                                        auto_select={true}
                                     />
                                 </div>
                             </div>

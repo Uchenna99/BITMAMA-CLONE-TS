@@ -101,8 +101,9 @@ const LoginPage =()=>{
                                     <p>OR</p>
                                     <GoogleLogin 
                                         onSuccess={onSuccess}
-                                        onError={()=>console.log('Auth failed!')
-                                        }
+                                        onError={()=>console.log('Auth failed!')}
+                                        theme="filled_blue"
+                                        shape="pill"
                                     />
                                 </div>
                             </div>
