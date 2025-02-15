@@ -4,10 +4,8 @@ import signupphone from "../assets/signupimg.png"
 import btcimg from "../assets/signupbtc.png"
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
-import { GoogleAuthPayload } from "../context/GlobalContext";
-import useGlobalState from "../context/GlobalState";
+// import { useNavigate } from "react-router-dom";
+// import useGlobalState from "../context/GlobalState";
 
 // interface CredentialResponse {
 //     credential: string;
@@ -18,8 +16,8 @@ import useGlobalState from "../context/GlobalState";
 
 
 const LoginPage =()=>{
-    const { setUserName } = useGlobalState();
-    const navigate = useNavigate();
+    // const { setUserName } = useGlobalState();
+    // const navigate = useNavigate();
 
 
     const [Email, setEmail] = useState('')
@@ -39,10 +37,12 @@ const LoginPage =()=>{
     }
 
     const onSuccess = (resp:any)=>{
-        const googleRes = jwtDecode(resp.credential) as GoogleAuthPayload;
-        console.log(googleRes.name);
-        setUserName(googleRes.name);
-        navigate('/');
+        console.log(resp);
+        
+        // const googleRes = jwtDecode(resp.credential) as GoogleAuthPayload;
+        // console.log(googleRes.name);
+        // setUserName(googleRes.name);
+        // navigate('/');
     };
 
     return(
