@@ -65,8 +65,8 @@ const Homepage =()=>{
         
         <Navbar activeSwitch={(switchIsActive)=> setIsActive(switchIsActive)}  />
 
-        <div className="overlay" style={{display: isActive === true? 'block' : 'none'}} >
-            <div className="burger-display" >
+        <div className={`overlay ${isActive? 'burger-back':''}`} >
+            <div className={`burger-display ${isActive? 'burger-back':''}`} >
                 <BurgerMenu activeSwitch={(switchIsActive)=> setIsActive(switchIsActive)} />
             </div>
         </div>

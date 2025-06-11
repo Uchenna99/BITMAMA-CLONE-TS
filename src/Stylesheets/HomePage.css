@@ -5,9 +5,11 @@
     height: fit-content;
     background-color: rgba(0, 0, 0, 0.712);
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 20;
+    translate: 100%;
+    transition: all 200ms linear;
     padding-bottom: 5px;
 }
 
@@ -17,13 +19,15 @@
     background-color: #0d4740;
     padding: 23px;
     justify-self: end;
-    animation: menu 200ms 1 both linear;
+    translate: 100%;
+    transition: all 200ms linear;
 }
 
-@keyframes menu {
-    from{ transform: translateX(100%); }
-    to{ transform: translateX(0px); }
+.burger-back{
+    translate: 0;
 }
+
+
 
 
 
